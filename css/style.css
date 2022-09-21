@@ -48,6 +48,10 @@ body {
 .flex_gap {
     gap: 1.5rem;
 }
+.column_flex {
+    display: flex;
+    flex-direction: column;
+}
 .font_big {
     font-size: 1.5rem;
 }
@@ -78,14 +82,57 @@ nav {
     background-color: var(--pure_black);
 }
 .spotify_logo {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 70%;
     height: 80px;
 }
-
+.nav_home, .nav_search, .nav_library {
+    font-weight: 600;
+    padding: 0.3rem 1.5rem;
+}
 .nav_home svg, .nav_search svg, .nav_library svg {
     width: 1.5rem;
+    margin-right: 0.5rem;
 }
+.playlist {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+.playlist h3 {
+    padding-bottom: 0.5rem;
+}
+.create_playlist {
+    margin-bottom: 0.8rem;
+}
+.create_playlist i {
+    font-size: 3rem;
+    margin-right: 0.5rem;
+}
+.playlist_name p {
+    margin-bottom: 0.8rem;
+}
+
+/* NAVBAR LOW SECTION  */
+.install_app {
+    padding: 0.5rem 1.3rem;
+    border-bottom: 2px solid #717171;
+}
+.install_app svg {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+.user_name {
+    padding: 1rem 1.5rem;
+}
+.user_name svg {
+    width: 1.5rem;
+    font-weight: 600;
+    background-color: var(--text_gray);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    padding: 2px;
+}
+
 
 
 /* PARTE DX DELLA VIEWPORT  */
@@ -185,7 +232,7 @@ aside button:hover {
 
 /* FOOTER  */
 
-.footer_bar {
+.footer_playbar {
     width: 100%;
     height: 95px;
     position: fixed;
