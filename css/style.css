@@ -35,11 +35,18 @@ body {
 .justify_between {
     justify-content: space-between;
 }
+.justify_end {
+    justify-content: flex-end;
+}
+.justify_center {
+    justify-content: center;
+    flex-flow: row wrap;
+}
 .align_center {
     align-items: center;
 }
 .flex_gap {
-    gap: 1rem;
+    gap: 1.5rem;
 }
 .font_big {
     font-size: 1.5rem;
@@ -70,6 +77,16 @@ nav {
     height: 100%;
     background-color: var(--pure_black);
 }
+.spotify_logo {
+    padding: 1rem;
+    width: 70%;
+    height: 80px;
+}
+
+.nav_home svg, .nav_search svg, .nav_library svg {
+    width: 1.5rem;
+}
+
 
 /* PARTE DX DELLA VIEWPORT  */
 
@@ -82,12 +99,13 @@ nav {
 /* BAR SUPERIORE  */
 
 aside {
-    width: 100%;
+    width: calc(100% - 230px);
     height: 80px;
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
     z-index: 1000;
+    padding: 1rem;
 }
 aside button {
     transition: all 0.2s linear;
@@ -112,6 +130,7 @@ aside button:hover {
 .inner_content_nav ul li {
     list-style: none;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 .inner_content_nav ul li:hover {
     color: var(--text_white);
@@ -173,4 +192,26 @@ aside button:hover {
     bottom: 0;
     z-index: 9999;
     background-color: var(--dark_gray);
+}
+
+/* MEDIA QUERIES  */
+
+/* DESKTOP 992px  */
+@media screen and (max-width:992px) {
+    .albums_row {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .album_card {
+        width: calc((100% - 6rem) / 4);
+    }
+
+}
+
+/* TABLET 768px */
+@media screen and (max-width:768px) {
+    .album_card {
+        width: calc(50% - 3rem)
+    }
+    
 }

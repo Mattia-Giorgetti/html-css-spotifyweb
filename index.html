@@ -15,17 +15,34 @@
     <div class="wrapper">
         <main class="d_flex">
             <!-- NAVBAR LATERALE  -->
-            <nav></nav>
+            <nav>
+                <div class="spotify_logo">
+                    <img src="img/logo.svg" alt="web logo">
+                </div>
+                <div class="nav_home d_flex align_center">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="#ffffff"/></svg>
+                    <span class="wht_txt small_font">Home</span>
+                </div>
+                <div class="nav_search d_flex align_center">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="#717171" fill-rule="evenodd"/></svg>
+                    <span class="gray_txt small_font">Cerca</span>
+                </div>
+                <div class="nav_library d_flex align_center">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="#717171"/></svg>
+                    <span class="gray_txt small_font">La tua libreria</span>
+
+                </div>
+            </nav>
              <!-- PARTE DX DELLA VIEWPORT  -->
             <section class="main_content">
                 <!-- PICCOLA NAV SUPERIORE  -->
-                <aside class="d_flex align_center">
+                <aside class="d_flex justify_end align_center">
                     <button class="btn wht_txt">EFFETTUA L'UPGRADE</button>
                 </aside>
                 <!-- SEZIONE INTERNA CON ALBUM  -->
                 <section class="inner_content">
                     <div class="inner_content_nav gray_txt">
-                        <ul class="d_flex justify_between flex_gap">
+                        <ul class="d_flex justify_center flex_gap">
                             <li>In evidenza</li>
                             <li>Podcast</li>
                             <li>Classifiche</li>
