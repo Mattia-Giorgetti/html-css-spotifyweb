@@ -61,8 +61,22 @@ body {
 .small_font {
     font-size: 0.8rem;
 }
+.huge_font {
+    font-size: 2rem;
+}
 .rounded {
     border-radius: 50%;
+}
+.pointer {
+    cursor: pointer;
+}
+.active::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: var(--lime_green);
+    margin: 4px auto;
 }
 
 /* MAIN  */
@@ -91,8 +105,11 @@ nav {
     margin-left: 1.5rem;
     display: none;
 }
+.nav_home {
+    border-left: 4px solid var(--lime_green);
+}
 .nav_home, .nav_search, .nav_library {
-    font-weight: 600;
+    font-weight: 500;
     padding: 0.3rem 1.5rem;
 }
 .nav_home svg, .nav_search svg, .nav_library svg {
@@ -100,29 +117,40 @@ nav {
     margin-right: 0.5rem;
 }
 .playlist {
-    padding: 1rem 1.5rem;
-    font-weight: 600;
+    padding: 1rem 1.5rem 0 1.5rem;
+    font-weight: 500;
     min-height: 100px;
     overflow-y: auto;
 }
 .playlist h3 {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
 }
 .create_playlist {
     margin-bottom: 0.8rem;
 }
 .create_playlist i {
-    font-size: 3rem;
+    font-size: 1rem;
+    padding: 0.5rem;
     margin-right: 0.5rem;
+    color: var(--pure_black);
+    background-color: var(--text_gray);
 }
 .playlist_name p {
     margin-bottom: 0.8rem;
 }
+.nav_menu span:hover, .playlist_name p:hover,
+.create_playlist:hover span,
+.install_app:hover svg, .install_app:hover span {
+    color: var(--text_white);
+}
+.create_playlist:hover i {
+    background-color: var(--text_white);
+}
 
-/* NAVBAR LOW SECTION  */
+/* BARRA LATERALE - LOW SECTION  */
 .install_app {
     padding: 0.5rem 1.3rem;
-    border-bottom: 2px solid #717171;
+    border-bottom: 1px solid #717171;
 }
 .install_app svg {
     width: 1.5rem;
@@ -130,6 +158,9 @@ nav {
 }
 .user_name {
     padding: 1rem 1.5rem;
+}
+.user_name h3:hover {
+    text-decoration: underline;
 }
 .user_name svg {
     width: 1.5rem;
@@ -142,8 +173,6 @@ nav {
 .nav_bottom {
     margin-top: auto;
 }
-
-
 
 /* PARTE DX DELLA VIEWPORT  */
 
@@ -170,7 +199,6 @@ aside button {
 aside button:hover {
     transform: scale(1.1);
 }
-
 
 /* SEZIONE INTERNA CON ALBUM COVERS  */
 
@@ -207,11 +235,15 @@ aside button:hover {
     padding: 0.5rem 0;
 }
 .album_card {
-    width: calc(100% / 6);
+    width: calc((100% - 7rem) / 6);
     text-align: center;
+}
+.album_card h3:hover {
+    text-decoration: underline;
 }
 .album_cover img {
     max-width: 100%;
+    display: block;
 }
 .album_cover {
     position:relative;
@@ -239,7 +271,6 @@ aside button:hover {
     display: block;
 }
 
-
 /* FOOTER  */
 
 .footer_playbar {
@@ -249,8 +280,85 @@ aside button:hover {
     bottom: 0;
     z-index: 9999;
     background-color: var(--dark_gray);
+    padding: 1.5rem
 }
-
+.playbar_cover {
+    width: 3rem;
+}
+.playbar_cover img {
+    width: 100%;
+}
+.pref_icons {
+    padding-left: 0.8rem;
+}
+.pref_icons span {
+    padding: 0 0.4rem; 
+}
+.pref_icons span:hover i{
+    color: var(--text_white);
+}
+.playtime_progress span {
+    padding: 1rem;
+}
+.icon_list, .icon_monitor, .icon_volume {
+    padding: 1rem;
+}
+.border_bar {
+    background-color: var(--text_gray);
+    height: 4px;
+    width: 100px;
+    border-radius: 10px;
+}
+.bar_lenght {
+    height: 4px;
+    width: 25px;
+    background-color: var(--text_white);
+    border-radius: 10px;
+    position: relative;
+}
+.song_duration_bar {
+    background-color: var(--text_gray);
+    height: 4px;
+    width: 30vw;
+    border-radius: 10px;
+}
+.song_duration_lenght {
+    height: 4px;
+    width: 20%;
+    background-color: var(--text_white);
+    border-radius: 10px;
+    position: relative;
+}
+.bar_dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--text_white);
+    position: absolute;
+    top: -70%;
+    right: 0;
+    display: none;
+}
+.icon_dots {
+    display: none;
+}
+.artist_info p:hover {
+    color: var(--text_white);
+    text-decoration: underline;
+    cursor: pointer;
+}
+span.play_btn i {
+    transition: all 0.2s linear;
+}
+span.play_btn:hover i {
+    transform: scale(1.1);
+}
+.song_duration_bar:hover div.song_duration_lenght,
+ .border_bar:hover div.bar_lenght {
+    background-color: var(--lime_green);
+}
+.song_duration_bar:hover .bar_dot, .border_bar:hover .bar_dot {
+    display: block;
+}
 /* MEDIA QUERIES  */
 
 /* DESKTOP 992px  */
@@ -260,17 +368,24 @@ aside button:hover {
         flex-flow: row wrap;
     }
     .album_card {
-        width: calc((100% - 6rem) / 4);
+        width: calc((100% - 5rem) / 4);
     }
-
+    .icon_list, .icon_monitor, .icon_volume {
+        padding: 0.8rem;
+    }
 }
 
 /* TABLET 768px */
 @media screen and (max-width:768px) {
     .album_card {
-        width: calc(50% - 3rem)
+        width: calc(50% - 1rem);
     }
-    
+    .border_bar {
+        width: 80px;
+    }
+    .icon_list, .icon_monitor, .icon_volume {
+        padding: 0.5rem;
+    }
 }
 
 /* MOBILE 576px */
@@ -298,6 +413,7 @@ aside button:hover {
     }
     .nav_home, .nav_search, .nav_library, .install_app, .user_name {
         padding: 0;
+        border: none;
     }
     .install_app {
         border: none;
@@ -316,10 +432,27 @@ aside button:hover {
     .column_flex {
         align-items: center;
     }
- 
+    .pref_icons {
+        display: none;
+    }
+    .border_bar {
+        display: none;
+    }
+}
 
-
-
-
+/* BONUS XS SOTTO 490px */
+@media screen and (max-width:490px) {
+    .icon_list, .icon_monitor, .icon_volume, .border_bar, .playbar_cover{
+        display: none;
+    }
+    .icon_dots {
+        display: block;
+    }
+    .icon_dots i{
+        transition: all 0.2s linear;
+    }
+     .icon_dots:hover i {
+        transform: scale(1.2);
+    }
 }
     
