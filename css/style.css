@@ -97,6 +97,8 @@ nav {
 .playlist {
     padding: 1rem 1.5rem;
     font-weight: 600;
+    min-height: 100px;
+    overflow-y: auto;
 }
 .playlist h3 {
     padding-bottom: 0.5rem;
@@ -131,6 +133,9 @@ nav {
     border-radius: 50%;
     margin-right: 0.5rem;
     padding: 2px;
+}
+.nav_bottom {
+    margin-top: auto;
 }
 
 
