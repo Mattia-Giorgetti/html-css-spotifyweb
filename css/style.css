@@ -119,14 +119,12 @@ nav {
 .playlist {
     padding: 1rem 1.5rem 0 1.5rem;
     font-weight: 500;
-    min-height: 90px;
-    overflow-y: auto;
 }
 .playlist h3 {
     padding-bottom: 0.8rem;
 }
 .create_playlist {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 .create_playlist i {
     font-size: 1rem;
@@ -135,10 +133,16 @@ nav {
     color: var(--pure_black);
     background-color: var(--text_gray);
 }
-.playlist_name p {
-    margin-bottom: 0.8rem;
+.playlist_name {
+    padding: 0 1.5rem 0 1.5rem;
+    font-weight: 500;
+    overflow-y: auto;
 }
-.nav_menu span:hover, .playlist_name p:hover,
+.playlist_name ul li span {
+    margin-bottom: 0.8rem;
+    display: block;
+}
+.nav_menu span:hover, .playlist_name span:hover,
 .create_playlist:hover span,
 .install_app:hover svg, .install_app:hover span {
     color: var(--text_white);
@@ -218,6 +222,9 @@ aside button:hover {
     font-size: 0.8rem;
 }
 .inner_content_nav ul li:hover {
+    color: var(--text_white);
+}
+.inner_content_nav ul li.active {
     color: var(--text_white);
 }
 
@@ -449,6 +456,9 @@ span.play_btn:hover i {
     .nav_home:hover, .nav_search:hover, 
     .nav_library:hover, .install_app:hover, .user_name:hover{
         cursor: pointer;
+    }
+    .playlist_name {
+        display: none;
     }
     .install_app {
         border: none;
