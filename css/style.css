@@ -78,6 +78,9 @@ body {
     background-color: var(--lime_green);
     margin: 4px auto;
 }
+a {
+    text-decoration: none;
+}
 
 /* MAIN  */
 .wrapper {
