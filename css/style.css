@@ -252,7 +252,7 @@ aside button:hover {
     text-decoration: underline;
 }
 .album_cover img {
-    max-width: 100%;
+    width: 100%;
     display: block;
 }
 .album_cover {
